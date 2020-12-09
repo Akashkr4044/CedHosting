@@ -30,6 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						$(".swipebox").swipebox();
 					});
 				</script>
+<script src="script.js"></script>
 <!--script-->
 </head>
 <body>
@@ -53,11 +54,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<form>
 									  <div>
 										<span>Email Address<label>*</label></span>
-										<input type="text"> 
+										<input type="text" name="email" fv-not-empty="This field can't be empty" fv-email="Please supply a valid email."> 
 									  </div>
 									  <div>
 										<span>Password<label>*</label></span>
-										<input type="password"> 
+										<input type="password" name="pass" class="prevent" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8" maxlength="16" fv-not-empty="This field can't be empty"> 
 									  </div>
 									  <a class="forgot" href="#">Forgot Your Password?</a>
 									  <input type="submit" value="Login">
