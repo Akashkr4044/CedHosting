@@ -1,4 +1,5 @@
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <div class="header">
 			<div class="container">
 				<nav class="navbar navbar-default">
@@ -34,7 +35,7 @@
 								<li><a href="pricing.php">Pricing</a></li>
 								<li><a href="blog.php">Blog</a></li>
 								<li><a href="contact.php">Contact</a></li>
-								<li><a href="#">Cart(icon)</a></li>
+								<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
 								<li><a href="login.php">Login</a></li>
 							</ul>
 									  
