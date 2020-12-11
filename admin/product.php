@@ -1,4 +1,6 @@
-
+<?php 
+require_once('header.php');
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en-US"  class="supernova"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -276,18 +278,12 @@ for (var i = 0; i < all_spc.length; i++)
   </script>
   <div class="formFooter-heightMask">
   </div>
-  <div class="formFooter f6">
-    <div class="formFooter-wrapper formFooter-leftSide">
-      <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=203442420701036&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo/logo-new@1x.png" alt="Jotform Logo"></a>
-    </div>
-    <div class="formFooter-wrapper formFooter-rightSide">
-      <span class="formFooter-text">
-        Now create your own JotForm - It's free!
-      </span>
-      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=203442420701036&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own JotForm</a>
-    </div>
-  </div>
+  
 </form></body>
 </html>
 <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.22245"></script>
 <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.22245"></script>
+
+<?php 
+require_once('footer.php');
+?>

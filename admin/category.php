@@ -14,7 +14,7 @@ if (isset($_POST['submit']))
 
 }
 ?>
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<!-- <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -43,62 +43,108 @@ if (isset($_POST['submit']))
       </div>
     </div>
   </div>
+</div> -->
+
+<!-- <div class="text-center"> -->
+  <!-- <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
+    Modal Login Form</a>
+</div> -->
+  <!-- <div class="container">
+    <form  method="POST">
+    <h4 class="h4">Create Category</h4>
+    <div class="form-control">
+        Product-parent-id :<input type ="text" name="id" class="id ml-4">
+    </div>
+    <div class="form-control">
+        Product-Name:<input type ="text" name="name" class="id ml-5">
+    </div>
+    <div class="form-control">
+        Product-link:<input type ="text" name="link" class="id ml-5 ">
+    </div>
+    <div class="form-control">
+        Product-Avaiblable :<input type ="text" name="avb" class="id ml-2">
+    </div>
+    <div class="form-control">
+      <input type ="Submit" name="submit" class="submit ">
+    </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="card-body">
+  <form>
+    <h6 class="heading-small text-muted mb-4">Create Category</h6>
+    <div class="pl-lg-4">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label class="form-control-label" for="input-username">Product-parent-id</label>
+            <input type="text" name="id" id="input-username" class="form-control">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label class="form-control-label" for="input-email">Product-Name</label>
+            <input type="text" name="name" id="input-email" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label class="form-control-label" for="input-first-name">Product-link</label>
+            <input type="text" name="link" id="input-first-name" class="form-control">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label class="form-control-label" for="input-last-name">Product-Avaiblable</label>
+            <input type="text" name="avb" id="input-last-name" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div>
+        <input type ="Submit" name="submit" class="submit ">
+    </div>
+    </div>
+    <hr class="my-4" />
+  </form>
 </div>
 
-<div class="text-center">
-  <!-- <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
-    Modal Login Form</a> -->
-</div>
-<div class="container">
-    <form  method="POST">
-<h4 class="h4">Create Category</h4>
-<div class="form-control">
-    Product-parent-id :<input type ="text" name="id" class="id ml-4">
-</div>
-<div class="form-control">
-    Product-Name:<input type ="text" name="name" class="id ml-5">
-</div>
-<div class="form-control">
-    Product-link:<input type ="text" name="link" class="id ml-5 ">
-</div>
-<div class="form-control">
-    Product-Avaiblable :<input type ="text" name="avb" class="id ml-2">
-</div>
-<div class="form-control">
-  <input type ="Submit" name="submit" class="submit ">
-</div>
-</form>
-</div>
+
 <?php 
-if(isset($_GET['eid'])){
+  if(isset($_GET['eid'])){
     $m=$_GET['eid'];
     $b='<form method="POST">';
 }
 ?>
 <?php 
   $back=$obj2->cat_print($obj->conn);
-  $a= '<table id="myTable"><thead><tr><th>Id</th><th>Parent-Id</th><th>Product-Name</th><th>Link</th><th>Is-Avb</th><th>Date</th><th>Action</th></thead></tr><tbody><tr>';
+  $a= '<table id="myTable">
+       <thead>
+        <tr>
+          <th style="padding-left:40px">Id</th>
+          <th style="padding-left:40px">Parent-Id</th>
+          <th style="padding-left:40px">Product-Name</th>
+          <th style="padding-left:40px">Link</th>
+          <th style="padding-left:40px">Is-Avb</th>
+          <th style="padding-left:40px">Date</th>
+          <th style="padding-left:40px"Action</th> 
+        </tr>
+        </thead><tbody><tr>';
   foreach($back as $val){
-    $a.='<td>'.$val['id'].'</td>';
-    $a.='<td>'.$val['prod_parent_id'].'</td>';
-    $a.='<td>'.$val['prod_name'].'</td>';
-    $a.='<td>'.$val['link'].'</td>';
-    $a.='<td>'.$val['prod_available'].'</td>';
-    $a.='<td>'.$val['prod_launch_date'].'</td>';
-    $a.='<td><a href="cat_del.php?id='.$val['id'].'" class="sa">Delete</a><a href="cat_del.php?eid='.$val['id'].'" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Edit</a></td></tr>';
+    $a.='<td style="padding-left:40px">'.$val['id'].'</td>';
+    $a.='<td style="padding-left:40px">'.$val['prod_parent_id'].'</td>';
+    $a.='<td style="padding-left:40px">'.$val['prod_name'].'</td>';
+    $a.='<td style="padding-left:40px">'.$val['link'].'</td>';
+    $a.='<td style="padding-left:40px">'.$val['prod_available'].'</td>';
+    $a.='<td style="padding-left:40px">'.$val['prod_launch_date'].'</td>';
+    $a.='<td style="padding-left:40px"><a href="cat_del.php?id='.$val['id'].'" class="btn btn-default btn-rounded">Delete</a><a href="cat_del.php?eid='.$val['id'].'" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#modalLoginForm">Edit</a></td></tr>';
   }
   $a.='</tbody></table>';
   echo $a;
 
 ?>
-
-<style>
-.sa{
-    padding:10px;
-    color:red;
-}
-</style>
-
 
 <?php 
 require_once('footer.php');

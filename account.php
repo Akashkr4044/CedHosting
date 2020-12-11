@@ -112,7 +112,7 @@
 
 ?>
 		<!---login--->
-	<div class="content">
+<div class="content">
 		<!-- registration -->
 	<div class="main-1">
 		<div class="container">
@@ -174,7 +174,7 @@
 	</div>
 <!-- registration -->
 
-	</div>
+</div>
 <!-- login -->
 <script>
 				var count_mob=0;
