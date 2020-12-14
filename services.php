@@ -1,7 +1,4 @@
-
-	<!---header--->
-	<?php include 'header.php'; ?>
-	<!---header--->
+<?php require "header.php" ?>
 		<!--services--->
 				<div class="content">
 					<div class="brilliant-section">
@@ -192,7 +189,4 @@
 					<!---services-prices--->
 				</div>
 			
-			<!---footer--->
-			<?php include 'footer.php'; ?>
-			<!---footer--->
-			
+				<?php require "footer.php" ?>

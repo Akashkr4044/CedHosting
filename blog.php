@@ -1,8 +1,4 @@
-
-	<!---header--->
-	<?php include 'header.php'; ?>
-	<!---header--->
-		<!---blog--->
+<?php require "header.php" ?>
 				<div class="content">
 					<div class="blog">
 						<div class="container">
@@ -63,6 +59,8 @@
 					<!---blog--->
 				</div>
 			<!---footer--->
-			<?php include 'footer.php'; ?>
-			<!---footer--->
+			<?php require "footer.php" ?>
 			
+			
+</body>
+</html>

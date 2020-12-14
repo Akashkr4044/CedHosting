@@ -1,7 +1,4 @@
-
-	<!---header--->
-	<?php include 'header.php'; ?>
-	<!---header--->
+<?php require "header.php" ?>
 		<!---singleblog--->
 				<div class="content">
 					<div class="linux-section">
@@ -279,7 +276,4 @@
 					</div>
 
 				</div>
-			<!---footer--->
-			<?php include 'footer.php'; ?>
-			<!---footer--->
-			
+				<?php require "footer.php" ?>

@@ -1,182 +1,121 @@
-
-
-	<!---header--->
-	<?php 
-	require "header.php" ; 
-	?>
-	<!---header--->
-
-
 <?php 
-	require_once('class/user.php');
-	require_once('class/dbcon.php');
-	
-    // use PHPMailer\PHPMailer\PHPMailer;
+    require "header.php" ;
+	// use PHPMailer\PHPMailer\PHPMailer;
 	// use PHPMailer\PHPMailer\Exception;
 	// require '/home/cedcoss/vendor/autoload.php';
 
-    $obj= new DB();
-	$obj2=new User();
-	
-	if (isset($_POST['submit'])) {
-    
-		$name=isset($_POST['name'])?$_POST['name']:'';
-		$name=strtolower($name);
-		$phone=isset($_POST['phone'])?$_POST['phone']:'';
-		$userpassword=isset($_POST['pass'])?$_POST['pass']:'';
-		$userpassword2=isset($_POST['repass'])?$_POST['repass']:'';
-		$email=isset($_POST['email'])?$_POST['email']:'';
-		$ques=isset($_POST['ques'])?$_POST['ques']:'';
-		$ans=isset($_POST['ans'])?$_POST['ans']:'';
-		$_SESSION['name']=$name;
-		$_SESSION['phone']=$phone;
-		$_SESSION['email']=$email;
-		$_SESSION['ques']=$ques;
-		$_SESSION['ans']=$ans;
-	
-	
-		$obj2->entry($name,$phone,$ques,$ans,$userpassword,$email, $userpassword2,$obj->conn);
-
-		// $otp = rand(1000,9999);
-		// 		$_SESSION['otp']=$otp;
-		// 		$mail = new PHPMailer();
-		// 		try {                                       
-		// 			     $mail->isSMTP(true);                                             
-		// 			    $mail->Host       = 'smtp.gmail.com';                     
-		// 			    $mail->SMTPAuth   = true;                              
-		// 			    $mail->Username   = 'akashkumar.ak4044@gmail.com';                  
-		// 			    $mail->Password   = '4024034044';                         
-		// 			    $mail->SMTPSecure = 'tls';                               
-		// 			    $mail->Port       = 587;   
-					  
-		// 			    $mail->setfrom('akashkumar.ak4044@gmail.com', 'CedHosting');            
-		// 			    $mail->addAddress($email); 
-		// 			    $mail->addAddress($email, $name); 
-					       
-		// 			    $mail->isHTML(true);                               
-		// 			    $mail->Subject = 'Account Verification'; 
-		// 			    $mail->Body    = 'Hi User,Here is your otp for account verification-'.$otp; 
-		// 			    $mail->AltBody = 'Body in plain text for non-HTML mail clients';
-		// 			    $mail->send();
-		// 			    header('location: verification.php?email=' . $email);
-		// 			} 
-		// 			catch (Exception $e)
-		// 			 {
-		// 			    echo "Mailer Error: " . $mail->ErrorInfo;
-		// 			}
-
-
-		// 			$otp2 = rand(1000,9999);
-		// 			$_SESSION['otp2']=$otp2;
-
-		// 			$fields = array(
-		// 				"sender_id" => "FSTSMS",
-		// 				"message" => "This is Test message".$otp2,
-		// 				"language" => "english",
-		// 				"route" => "p",
-		// 				"numbers" => "$phone",
-		// 			);
-	
-		// 			$curl = curl_init();
-	
-		// 			curl_setopt_array($curl, array(
-		// 			CURLOPT_URL => "https://www.fast2sms.com/dev/bulk",
-		// 			CURLOPT_RETURNTRANSFER => true,
-		// 			CURLOPT_ENCODING => "",
-		// 			CURLOPT_MAXREDIRS => 10,
-		// 			CURLOPT_TIMEOUT => 30,
-		// 			CURLOPT_SSL_VERIFYHOST => 0,
-		// 			CURLOPT_SSL_VERIFYPEER => 0,
-		// 			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		// 			CURLOPT_CUSTOMREQUEST => "POST",
-		// 			CURLOPT_POSTFIELDS => json_encode($fields),
-		// 			CURLOPT_HTTPHEADER => array(
-		// 				"authorization: puder05xRibOXwsKBcGP2Q86a9SmqhnlIFyE7JNk4HfWZzYCoTZp8L5P0t1NqAgz3Y7wvTa2CmlnSxRK",
-		// 				"accept: */*",
-		// 				"cache-control: no-cache",
-		// 				"content-type: application/json"
-		// 			),
-		// 			));
-	
-		// 			$response = curl_exec($curl);
-		// 			$err = curl_error($curl);
-	
-		// 			curl_close($curl);
-	
-		// 			if ($err) {
-		// 			echo "cURL Error #:" . $err;
-		// 			} else {
-		// 			echo $response;
-		// 			}
-	}
-
 ?>
-		<!---login--->
-<div class="content">
-		<!-- registration -->
+
+<?php 
+require_once('class/user.php');
+require_once('class/dbcon.php');
+$obj= new DB();
+$obj2=new User();
+if (isset($_POST['submit'])) {
+
+
+    $name=isset($_POST['name'])?$_POST['name']:'';
+    $name=strtolower($name);
+    $phone=isset($_POST['phone'])?$_POST['phone']:'';
+    $userpassword=isset($_POST['pass'])?$_POST['pass']:'';
+    $userpassword2=isset($_POST['repass'])?$_POST['repass']:'';
+	$email=isset($_POST['email'])?$_POST['email']:'';
+	$ques=isset($_POST['ques'])?$_POST['ques']:'';
+	$ans=isset($_POST['ans'])?$_POST['ans']:'';
+	$_SESSION['name']=$name;
+	$_SESSION['phone']=$phone;
+	$_SESSION['email']=$email;
+	$_SESSION['ques']=$ques;
+	$_SESSION['ans']=$ans;
+
+
+	
+	$obj2->entry($name,$phone,$ques,$ans,$userpassword,$email, $userpassword2,$obj->conn);
+
+        			
+									
+								}
+		
+			
+			
+			
+?>
+	
+
+
+			<div class="content">
+				<!-- registration -->
 	<div class="main-1">
 		<div class="container">
 			<div class="register">
-		  	  	<form action="" method="POST"> 
-				 	<div class="register-top-grid">
-						<h3>personal information</h3>
-					 	<div>
-							<span>Email Address<label>*</label></span>
-							<input type="text" name="email" fv-not-empty="This field can't be empty" fv-email="Please supply a valid email." required> 
-					 	</div>
-					 	<div>
-							<span>Full Name<label>*</label></span>
-							<input type="text" name="name" class="prevent" pattern="^[a-zA-Z_]+( [a-zA-Z_]+)*$" onkeydown="return alphaonly(event);" fv-not-empty="This field can't be empty" required> 
-						</div>
-					</div>
-					<div class="register-top-grid">
-						<div>
-							<span>Mobile<label>*</label></span>
-							<input type="text" name="phone" id="mobile" maxlength="10" class="prevent" onkeydown="return onlynumber(event);" fv-not-empty="This field can't be empty" required> 
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-					<div class="register-bottom-grid">
-					 	<div>
-					 		<span>Password<label>*</label></span>
-					 		<input type="password" name="pass" class="prevent" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8" maxlength="16"  fv-not-empty="This field can't be empty" required>
-					 	</div>
-					 	<div>
-					 		<span>Confirm Password<label>*</label></span>
-					 		<input type="password" name="repass" class="prevent" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required minlength="8" maxlength="16" fv-not-empty="This field can't be empty" required> 
-						</div>
-					</div>
-					<div class="register-top-grid">
-						<div>
-						<span>Security Question<label>*</label></span>
-                           <select style="width:524px;height:37px; " name="ques" required>
-						      <option value="" selected disabled hidden>--Select Security Question--</option>
-                              <option value="What was your childhood nickname?">What was your childhood nickname?</option>
-                              <option value="What is the name of your favourite childhood friend?">What is the name of your favourite childhood friend?</option>
-                              <option value="What was your favourite place to visit as a child?">What was your favourite place to visit as a child?</option>
-                              <option value="What was your dream job as a child?">What was your dream job as a child?</option>
-                              <option value="What is your favourite teacher's nickname?">What is your favourite teacher's nickname?</option>
-                           </select>
-						</div>
-						 <div>
-						 <span>Security Answer<label>*</label></span>
-						 <input type="text" class="prevent" name="ans" id="sans" fv-alphanum="This field must be a alpha-numeric value" fv-not-empty="This field can't be empty" required>
-						 </div> 
-					</div>			    
-					<div class="clearfix"> </div>
-					<div class="register-but">
-						<input type="submit" value="submit" name="submit" class="a">
+		  	  <form onsubmit=" return validate()" method="POST"> 
+				 <div class="register-top-grid">
+					<h3>personal information</h3>
+					 <div>
+						<span> Name<label>*</label></span>
+						<input type="text" name="name" class="lugwt" required pattern="^[a-zA-Z_]+( [a-zA-Z_]+)*$" > 
+					 </div>
+					 <div>
+						<span>Phone No.<label>*</label></span>
+						<input type="text" name="phone" id="mobile" maxlength="10" class="lugwt" onkeydown="return onlynumber(event);" required> 
+					 </div>
+					 <div>
+						 <span>Email Address<label>*</label></span>
+						 <input type="email" name="email" id="email" class="lugwt" onkeydown="return alphaonly3(event);" required >  
+					 </div>
+					 <!-- <div>
+						 <span>Security Question<label>*</label></span>
+						 <input type="text" name="ques" > 
+					 </div> -->
+					 <div>
+					 	 <span>Security Question<label>*</label></span>
+					<select name="ques" id="squestion" style="width:524px;height:37px" required>
+
+                       <option value="" selected disabled hidden>--Select Security Question--</option>
+						   
+							<option value="What was your childhood nickname?">What was your childhood nickname?</option>
+							<option value="What is the name of your favourite childhood friend?">What is the name of your favourite childhood friend?</option>
+							<option value="What was your favourite place to visit as a child?">What was your favourite place to visit as a child?</option>
+							<option value="What was your dream job as a child?">What was your dream job as a child?</option>
+							<option value="What is your favourite teacher's nickname?">What is your favourite teacher's nickname?</option>
+						</select>
+					 </div>
+					 <div>
+						 <span>Answer<label>*</label></span>
+						 <input type="text"  class="lugwt" name="ans" id="sans" required pattern="^[a-zA-Z0-9]+$"
+                          onkeydown="return alphaonly2(event);"> 
+					 </div>
+					 <div class="clearfix"> </div>
+					   <a class="news-letter" href="#">
+						
+					   </a>
+					 </div>
+				     <div class="register-bottom-grid">
+						    <h3>login information</h3>
+							 <div>
+								<span>Password<label>*</label></span>
+								<input type="password" name="pass" class="lugwt" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8" maxlength="16" required>
+							 </div>
+							 <div>
+								<span>Confirm Password<label>*</label></span>
+								<input type="password" name="repass" class="lugwt" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required minlength="8" maxlength="16" >
+							 </div>
+					 </div>
+				
+				<div class="clearfix"> </div>
+				<div class="register-but">
+				   
+					   <input type="submit" value="submit" name="submit" class="a" >
 					   <div class="clearfix"> </div>
-					</div>
-				</form>
+				   </form>
+				</div>
 		   </div>
 		 </div>
 	</div>
 <!-- registration -->
 
-</div>
-<!-- login -->
-<script>
+			</div>
+			<script>
 				var count_mob=0;
 				var count=0;
 				var temp=0;
@@ -327,10 +266,9 @@ return;
 
 });
 
-$('.prevent').on("cut copy paste drag drop",function(e) {
+$('.lugwt').on("cut copy paste drag drop",function(e) {
 e.preventDefault();
 });
 			</script>
-	<!---footer--->
-	<?php include 'footer.php'; ?>
-<!---footer--->
+<!-- login -->
+<?php require "footer.php" ?>

@@ -1,7 +1,4 @@
-
-	<!---header--->
-	<?php include 'header.php'; ?>
-	<!---header--->
+<?php require "header.php" ?>
 		<!-- //contact -->
 				<div class="content">
 					<div class="contact">
@@ -39,7 +36,4 @@
 <!-- //contact -->
 
 				</div>
-			<!---footer--->
-			<?php include 'footer.php'; ?>
-			<!---footer--->
-			
+				<?php require "footer.php" ?>

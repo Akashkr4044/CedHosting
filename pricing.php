@@ -1,7 +1,4 @@
-
-	<!---header--->
-	<?php include 'header.php'; ?>
-	<!---header--->
+<?php require "header.php" ?>
 		<!---prices--->
 				<div class="content">
 					<div class="detailed-section">
@@ -219,7 +216,4 @@
 					</div>
 					<!---prices--->
 				</div>
-			<!---footer--->
-			<?php include 'footer.php'; ?>
-			<!---footer--->
-			
+				<?php require "footer.php" ?>

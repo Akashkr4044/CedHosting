@@ -1,22 +1,3 @@
-// function validateform(){  
-//     var name=document.myform.name.value;  
-//     var password=document.myform.password.value; 
-//     var secondpassword=document.myform.password2.value; 
-      
-//     if (name==null && name==" "){  
-//       alert("Name can't be blank");  
-//       return false;  
-//     }
-//     else if(password.length<7 && password.length<17 && password.length==null && password.length!=""){  
-//       alert("Password must between 8 to 16 characters long.");  
-//       return false;  
-//     } 
-//     else if(password!=secondpassword){  
-//       alert("password must be same!");  
-//       return false;
-//     }  
-// }
-
 var fvId = 1;
 
 $(document).ready(function() {
@@ -29,6 +10,7 @@ $(document).ready(function() {
          * The text inside of the quotes is the error message to be added to the input
          * leave this blank to add none
          */
+        
         if(typeof $(this).attr('fv-not-empty') != "undefined") {
             this.validations++;
 
@@ -170,7 +152,7 @@ $(document).ready(function() {
                 var message = $(this).attr('fv-alphanum');
                 var val = $(this).val();
 
-                if (val.match(/^[a-_z0-_9]+$/i) != null) {
+                if (val.match(/^[a-z0-9]+$/i) != null) {
                     addSuccess(this);
                 } else {
                     addError(this, message);

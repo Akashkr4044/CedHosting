@@ -1,7 +1,4 @@
-
-	<!---header--->
-		<?php include 'header.php'; ?>
-	<!---header--->
+<?php require "header.php" ?>
 		<!--about--->
 				<div class="content">
 					<div class="about-section">
@@ -174,7 +171,4 @@
 					<!--statistics--->
 				</div>
 			
-			<!---footer--->
-			<?php include 'footer.php'; ?>
-			<!---footer--->
-			
+				<?php require "footer.php" ?>

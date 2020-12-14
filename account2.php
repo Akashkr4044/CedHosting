@@ -1,5 +1,4 @@
-<?php
-session_start(); 
+<?php 
 require_once 'header.php';
 $email2=$_SESSION['email'];
 ?>

@@ -39,7 +39,7 @@ class User{
            
 
         if ($conn->query($sql)===true) {
-            echo "<script>
+            echo "<script>alert('signed in successfully');
             window.location.href='account2.php';</script>";
                         
                         // header("Location: login.php");
@@ -85,7 +85,7 @@ class User{
                             else if($row['is_admin']==1)
                                {
                                 echo "<script>alert('logged in successfully');
-                                window.location.href='admin/index.php';</script>";
+                                window.location.href='admin/admin.php';</script>";
                                 } 
                              
                                
@@ -111,10 +111,7 @@ class User{
                 window.location.href='login.php';</script>";
                
         }
-
         function verify2($name,$m,$conn){
-           
-           
             $sql="UPDATE tbl_user SET `phone_approved`='1' , `active`='1' 
             WHERE `email`='".$m."'";
             echo $sql;
@@ -123,4 +120,5 @@ class User{
             window.location.href='login.php';</script>";
            
     }
- }
+ 
+    }

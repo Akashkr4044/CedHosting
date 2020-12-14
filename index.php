@@ -1,8 +1,13 @@
-
-	<!---header--->
-		<?php include 'header.php'; ?>
-	<!---header--->
-	<!---banner--->
+<?php require "header.php" ;
+if(!isset($_SESSION['userdata']['name'])){
+    echo "<script>alert(' please login first');
+    window.location.href='login.php';</script>";
+  }
+  if($_SESSION['userdata']['name']=='akash'){
+    echo "<script>alert(' please login first');
+    window.location.href='login.php';</script>";
+  }
+  ?>
 		<div class="banner">
 			<div class="container">
 				<div class="banner-grids">
@@ -93,8 +98,8 @@
 						</div>
 					</div>
 				</div>
-			<!---brilliantly--->
-			<!---team--->
+		=
+			
 				<!---team--->
 				<!---prices--->
 					<div class="price-section">
@@ -216,7 +221,4 @@
 					</div>
 				<!---posts--->
 			</div>	
-			<!---footer--->
-			<?php include 'footer.php'; ?>
-			<!---footer--->
-			
+			<?php require "footer.php" ?>
