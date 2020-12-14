@@ -57,7 +57,7 @@ session_start();
 </li>
 <ul class="nav-item">
 <a class="nav-link" href="category.php">
-<i class="ni ni-pin-3 text-primary"></i>
+<i class="ni ni-single-02 text-yellow"></i>
 <span class="nav-link-text">Create category</span>
 </a>
 </ul>

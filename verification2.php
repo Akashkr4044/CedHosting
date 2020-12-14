@@ -85,21 +85,13 @@ if ($err) {
 						
 					 </div>
 
-					 <div>
-					 	 <span>Security Question=<label><?php echo $_SESSION['ques'] ?></label></span>
-				
-					 </div>
-					 <div>
-						 <span>Answer-<label><?php echo $_SESSION['ans'] ?></label></span>
-
-					 </div>
 					 <div class="clearfix"> </div>
 					   
 				     
 				
 				<div class="clearfix"> </div>
                 <div class="register-top-grid">
-                    <h3>Enter Your Otp</h3>
+                    <h3>Enter Your Phone Otp</h3>
                   <div>
 						<span>OTP<label>*</label></span>
                         <input type="text" name="otp" >

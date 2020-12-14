@@ -39,18 +39,13 @@ class User{
            
 
         if ($conn->query($sql)===true) {
-            echo "<script>alert('signed in successfully');
-            window.location.href='account2.php';</script>";
-                        
-                        // header("Location: login.php");
+            echo "<script>alert('Plzz Verify Your Account');
+            window.location.href='account2.php';</script>";   
                     } 
-                    
                     else {
-                        // echo "<center><h3 style='color:white; font-size:1.2em;'> record not created </h3></center>";
-                        echo "<script>alert('Error');
+                        echo "<script>alert('Please Fill Correct Data');
                       </script>";
                     }
-            
                 }
             } 
         

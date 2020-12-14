@@ -29,11 +29,8 @@ if (isset($_POST['submitt']))
 
 
 <div class=container>
-    <form  method="POST"><center>
+    <form  method="POST">
 <h4 class="h4">Create Category</h4>
-<div class="form-control m-2">
-    Product-parent-id : 1 
-</div>
 <div class="form-control m-2">
     Product-Parent-Name : Hosting
 </div>
@@ -45,7 +42,7 @@ if (isset($_POST['submitt']))
 </div>
 
 <div class="form-control m-2">
- <input type ="Submit" name="submit" class="submit"></center>
+ <input type ="Submit" name="submit" class="submit">
 </div>
 </form>
 
@@ -79,12 +76,7 @@ if (isset($_POST['submitt']))
       </div>
       <form method="POST">
       <div class="modal-body mx-3">
-      <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type ="hidden" value="'.$val['id'].'" name="id" id="defaultForm-email" class="form-control validate id ml-4" readonly >
-       
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Id--'.$val['id'].'</label>
-        </div>
+      
        <div class="md-form mb-5">
           <i class="fas fa-envelope prefix grey-text"></i>
           <input type ="text" value="'.$val['prod_parent_id'].'" name="parent-id" id="defaultForm-email" class="form-control validate id ml-4 >
@@ -95,7 +87,7 @@ if (isset($_POST['submitt']))
         <div class="md-form mb-4">
           <i class="fas fa-lock prefix grey-text"></i>
           <input type ="text" value="'.$val['prod_name'].'" name="name"  id="defaultForm-email" class="form-control validate id ml-4">
-          <label data-error="wrong" data-success="right" for="defaultForm-pass">Product-name-name</label>
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Product-name</label>
         </div>
         <div class="md-form mb-5">
           <i class="fas fa-envelope prefix grey-text"></i>

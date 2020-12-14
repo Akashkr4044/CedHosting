@@ -3,7 +3,6 @@
 	// use PHPMailer\PHPMailer\PHPMailer;
 	// use PHPMailer\PHPMailer\Exception;
 	// require '/home/cedcoss/vendor/autoload.php';
-
 ?>
 
 <?php 
@@ -12,8 +11,6 @@ require_once('class/dbcon.php');
 $obj= new DB();
 $obj2=new User();
 if (isset($_POST['submit'])) {
-
-
     $name=isset($_POST['name'])?$_POST['name']:'';
     $name=strtolower($name);
     $phone=isset($_POST['phone'])?$_POST['phone']:'';
@@ -27,23 +24,15 @@ if (isset($_POST['submit'])) {
 	$_SESSION['email']=$email;
 	$_SESSION['ques']=$ques;
 	$_SESSION['ans']=$ans;
-
-
 	
-	$obj2->entry($name,$phone,$ques,$ans,$userpassword,$email, $userpassword2,$obj->conn);
+	$obj2->entry($name,$phone,$ques,$ans,$userpassword,$email, $userpassword2,$obj->conn);									
+}					
 
-        			
-									
-								}
-		
-			
-			
-			
 ?>
 	
 
 
-			<div class="content">
+	<div class="content">
 				<!-- registration -->
 	<div class="main-1">
 		<div class="container">
@@ -61,17 +50,17 @@ if (isset($_POST['submit'])) {
 					 </div>
 					 <div>
 						 <span>Email Address<label>*</label></span>
-						 <input type="email" name="email" id="email" class="lugwt" onkeydown="return alphaonly3(event);" required >  
+						 <input type="email" style="width:525px; height:36px;" name="email" id="email" class="lugwt" onkeydown="return alphaonly3(event);" required >  
 					 </div>
 					 <!-- <div>
 						 <span>Security Question<label>*</label></span>
 						 <input type="text" name="ques" > 
 					 </div> -->
 					 <div>
-					 	 <span>Security Question<label>*</label></span>
-					<select name="ques" id="squestion" style="width:524px;height:37px" required>
+					 	<span>Security Question<label>*</label></span>
+						<select name="ques" id="squestion" style="width:524px;height:37px" required>
 
-                       <option value="" selected disabled hidden>--Select Security Question--</option>
+                       		<option value="" selected disabled hidden>--Select Security Question--</option>
 						   
 							<option value="What was your childhood nickname?">What was your childhood nickname?</option>
 							<option value="What is the name of your favourite childhood friend?">What is the name of your favourite childhood friend?</option>
@@ -82,8 +71,7 @@ if (isset($_POST['submit'])) {
 					 </div>
 					 <div>
 						 <span>Answer<label>*</label></span>
-						 <input type="text"  class="lugwt" name="ans" id="sans" required pattern="^[a-zA-Z0-9]+$"
-                          onkeydown="return alphaonly2(event);"> 
+						 <input type="text" class="lugwt" name="ans" id="sans" required pattern="^[a-zA-Z0-9 /]+$" onkeydown="return alphaonly2(event);"> 
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
@@ -105,7 +93,7 @@ if (isset($_POST['submit'])) {
 				<div class="clearfix"> </div>
 				<div class="register-but">
 				   
-					   <input type="submit" value="submit" name="submit" class="a" >
+					   <input type="submit" style="width:125px; height:36px;" value="submit" name="submit" class="a" >
 					   <div class="clearfix"> </div>
 				   </form>
 				</div>
@@ -124,7 +112,7 @@ if (isset($_POST['submit'])) {
 				var count2=0;
 				function validate() {
                   if (Number.isInteger(parseInt($('#sans').val()))) {
-                  alert('Enter Answer in Correct Fornat');
+                  alert('Enter Answer in Correct Format');
                   $('#sans').val(""); 
                  return false;
                     }
@@ -180,33 +168,26 @@ if (isset($_POST['submit'])) {
 			       return true; 
 		     	
 				 }
-				//  else if(code > 47 || code < 58){
-				// 	count++;
-				// 	return true; 
-				//  }
+				
 			
 				 else{
 					return false;  
 				 }
 	}
 
-    function alphaonly2(button) { 
-	console.log(button.which);
-
+    function alphaonly2(button) {
+        console.log(button.which);
         var code = button.which;
-		if(count>0 && code==32){
-		
-			count=0;
-			return true; 
-		}
-		else if(code==32){
-			return false;
-		}
-		else{
-			count++;
-			return true; 
-		}
-		} 
+        if (count > 0 && code == 32) {
+            count = 0;
+            return true;
+        } else if (code == 32) {
+            return false;
+        } else {
+            count++;
+            return true;
+        }
+    }
 $("#mobile").bind("keyup", function (e) {
 
 mobile=$("#mobile").val();
