@@ -73,7 +73,7 @@ $(".swipebox").swipebox();
 <i class="icon-bar"></i>
 </button>
 <div class="navbar-brand">
-<h1><a href="index.html"><span style="color: #585CA7;">Ced</span> <span style="color: #e7663f;">Hosting</span></a></h1>
+<h1><a href="index.html"><span style="color: #585CA7; font-family: Serif; background-color: #e7663f; border-radius:40px;">Ced</span><span style="color: #e7663f; font-family: Serif; background-color: #585CA7; border-radius:40px;">Hosting</span></a></h1>
 </div>
 </div>
 

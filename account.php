@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 	
 
 
-	<div class="content">
+<div class="content">
 				<!-- registration -->
 	<div class="main-1">
 		<div class="container">
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 					<h3>personal information</h3>
 					 <div>
 						<span> Name<label>*</label></span>
-						<input type="text" name="name" class="lugwt" required pattern="^[a-zA-Z_]+( [a-zA-Z_]+)*$" > 
+						<input type="text" name="name" class="lugwt" pattern="^[a-zA-Z_]+( [a-zA-Z_]+)*$" required> 
 					 </div>
 					 <div>
 						<span>Phone No.<label>*</label></span>
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
 					 </div>
 					 <div>
 						 <span>Answer<label>*</label></span>
-						 <input type="text" class="lugwt" name="ans" id="sans" required pattern="^[a-zA-Z0-9 /]+$" onkeydown="return alphaonly2(event);"> 
+						 <input type="text" class="lugwt" name="ans" id="sans" pattern="^[a-zA-Z0-9]+$" onkeydown="return alphaonly2(event);" required> 
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
 							 </div>
 							 <div>
 								<span>Confirm Password<label>*</label></span>
-								<input type="password" name="repass" class="lugwt" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required minlength="8" maxlength="16" >
+								<input type="password" name="repass" class="lugwt" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8" maxlength="16" required>
 							 </div>
 					 </div>
 				
@@ -98,96 +98,98 @@ if (isset($_POST['submit'])) {
 				   </form>
 				</div>
 		   </div>
-		 </div>
+		</div>
 	</div>
 <!-- registration -->
 
-			</div>
-			<script>
-				var count_mob=0;
-				var count=0;
-				var temp=0;
-				var i=0;
-				var i2=0;
-				var count2=0;
-				function validate() {
-                  if (Number.isInteger(parseInt($('#sans').val()))) {
-                  alert('Enter Answer in Correct Format');
-                  $('#sans').val(""); 
-                 return false;
-                    }
-                 else {
-                   return true;
-                      }
+</div>
+
+<script>
+
+var count_mob=0;
+var count=0;
+var temp=0;
+var i=0;
+var i2=0;
+var count2=0;
+function validate() {
+	if (Number.isInteger(parseInt($('#sans').val()))) {
+	alert('Enter Answer in Correct Format');
+	$('#sans').val(""); 
+	return false;
+	}
+	else {
+	return true;
+		}
 
 }
-				function alphaonly(button) { 
-					var code = button.which;
-					if(count>0 && code==32 && (i2==0 || i2==1)){
-		         	count=0;
-					 i2++;
-			       return true; 
-			       
-		} 
-	            console.log(button.which);
-                
-                if ((code > 64 && code < 91) || (code < 123 && code > 96)|| (code==08)||(code==09)) {
-					count++;
-			   return true; 
-		     	
-				 }
-				 else{
-					return false;  
-				 }
+function alphaonly(button) { 
+	var code = button.which;
+	if(count>0 && code==32 && (i2==0 || i2==1)){
+	count=0;
+		i2++;
+	return true; 
+	
+} 
+console.log(button.which);
+
+if ((code > 64 && code < 91) || (code < 123 && code > 96)|| (code==08)||(code==09)) {
+	count++;
+return true; 
+
+}
+	else{
+	return false;  
+}
       
-    } 
-    function onlynumber(button) { 
+} 
+function onlynumber(button) { 
 
-        var code = button.which;
-		
-        if (code > 31 && (code < 48 || code > 57)&& (code < 96 || code > 105)) 
-            return false; 
-        return true; 
-        var myval = $(this).val();
-    
-    } 
-	function alphaonly3(button) { 
-		var code = button.which;
-		
-		if(count>0 && code==190){
-			console.log(count);
-		         	count=0;
-				 return true; 
-			       
-		} 
-	            console.log(button.which);
-                
-                if ((code > 64 && code < 91) || (code < 123 && code > 96)|| (code==08)||(code==09)||(code > 47 && code < 58)||code==37||code==39) {
-					count++;
-					console.log(count);
-			       return true; 
-		     	
-				 }
+	var code = button.which;
+	
+	if (code > 31 && (code < 48 || code > 57)&& (code < 96 || code > 105)) 
+		return false; 
+	return true; 
+	var myval = $(this).val();
+
+} 
+function alphaonly3(button) { 
+	var code = button.which;
+	
+	if(count>0 && code==190){
+		console.log(count);
+				count=0;
+				return true; 
 				
+	} 
+			console.log(button.which);
 			
-				 else{
-					return false;  
-				 }
-	}
+			if ((code > 64 && code < 91) || (code < 123 && code > 96)|| (code==08)||(code==09)||(code > 47 && code < 58)||code==37||code==39) {
+				count++;
+				console.log(count);
+				return true; 
+			
+				}
+			
+		
+				else{
+				return false;  
+				}
+}
 
-    function alphaonly2(button) {
-        console.log(button.which);
-        var code = button.which;
-        if (count > 0 && code == 32) {
-            count = 0;
-            return true;
-        } else if (code == 32) {
-            return false;
-        } else {
-            count++;
-            return true;
-        }
-    }
+function alphaonly2(button) {
+	console.log(button.which);
+	var code = button.which;
+	if (count > 0 && code == 32) {
+		count = 0;
+		return true;
+	} else if (code == 32) {
+		return false;
+	} else {
+		count++;
+		return true;
+	}
+}
 $("#mobile").bind("keyup", function (e) {
 
 mobile=$("#mobile").val();
@@ -250,6 +252,7 @@ return;
 $('.lugwt').on("cut copy paste drag drop",function(e) {
 e.preventDefault();
 });
-			</script>
+</script>
+
 <!-- login -->
 <?php require "footer.php" ?>

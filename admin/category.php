@@ -27,26 +27,23 @@ if (isset($_POST['submitt']))
 ?>
 
 
-
 <div class=container>
-    <form  method="POST">
-<h4 class="h4">Create Category</h4>
-<div class="form-control m-2">
-    Product-Parent-Name : Hosting
-</div>
-<div class="form-control m-2">
-    Product-Name:<input type ="text" name="name" class="ll id ml-4">
-</div>
-<div class="form-control m-2">
-    Product-link:<input type ="text" name="link" class="ll id ml-5 ">
-</div>
-
-<div class="form-control m-2">
- <input type ="Submit" name="submit" class="submit">
-</div>
-</form>
-
-
+  <form  method="POST">
+    <h4 class="h4">Create Category</h4>
+    <div class="form-control m-2">
+        Product-Parent-Name : Hosting
+    </div>
+    <div class="form-control m-2">
+        Product-Name:<input type ="text" name="name" class="ll id ml-4" required>
+    </div>
+    <div class="form-control m-2">
+        Product-link:<input type ="text" name="link" class="ll id ml-5" required>
+    </div>
+    <div class="form-control m-2">
+    <input type ="Submit" name="submit" class="submit">
+    </div>
+  </form>
+  <hr class="my-4" />
 
            
 
@@ -109,20 +106,31 @@ if (isset($_POST['submitt']))
     </div>
   </div>
 </div>';
-    echo $b;
+  echo $b;
   }
   $a.='</tbody></table>';
   echo $a;
   
 ?>
 </div>
-<style>
-.info{
-  margin
-}
-</style>
-
 </div>
+
+<script>
+  function alphaonly2(button) {
+	console.log(button.which);
+	var code = button.which;
+	if (count > 0 && code == 32) {
+		count = 0;
+		return true;
+	} else if (code == 32) {
+		return false;
+	} else {
+		count++;
+		return true;
+	}
+}
+</script>
+
 <?php 
 require_once('footer.php');
 ?>

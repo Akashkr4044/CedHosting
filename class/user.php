@@ -39,7 +39,7 @@ class User{
            
 
         if ($conn->query($sql)===true) {
-            echo "<script>alert('Plzz Verify Your Account');
+            echo "<script>alert('Please Verify Your Account');
             window.location.href='account2.php';</script>";   
                     } 
                     else {
@@ -69,7 +69,7 @@ class User{
                                  if($row['active']==0)
                                  {
                                  
-                                    echo "<script>alert('Account not approve yet please wait for  admin approval');<script>";
+                                    echo "<script>alert('Account not approve yet please wait for admin approval');<script>";
                                 } 
                                 else{
                                     echo "<script>alert('logged in successfully');

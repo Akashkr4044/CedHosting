@@ -38,22 +38,23 @@ if(isset($_POST['submitt'])){
 ?>
 <?php 
           
-          require_once('../class/product.php');
-          require_once('../class/dbcon.php');
-          $obj= new DB();
-          $obj2=new Product();
-          $back=$obj2->cat_list($obj->conn);
-         $a1=' <div id="cid_3" class="form-input-wide jf-required" data-layout="half"> <i class="fas fa-envelope prefix grey-text"></i>
-         <select class="form-dropdown validate[required]" id="input_3" name="drop" style="width:310px" data-component="dropdown" required="" aria-labelledby="label_3"><option value=""> Please Select </option>';
-          foreach($back as $val){
-            $a1.=' <option value="'.$val['id'].'"> '.$val['prod_name'].'</option>';
-          }
-          $a1.='</select> <label data-error="wrong" data-success="right" for="defaultForm-email">Parent-Name</label> </div>';
-      
-          ?>
+  require_once('../class/product.php');
+  require_once('../class/dbcon.php');
+  $obj= new DB();
+  $obj2=new Product();
+  $back=$obj2->cat_list($obj->conn);
+  $a1=' <div id="cid_3" class="form-input-wide jf-required" data-layout="half"> <i class="fas fa-envelope prefix grey-text"></i>
+  <select class="form-dropdown validate[required]" id="input_3" name="drop" style="width:310px" data-component="dropdown" required="" aria-labelledby="label_3"><option value=""> Please Select </option>';
+  foreach($back as $val){
+    $a1.=' <option value="'.$val['id'].'"> '.$val['prod_name'].'</option>';
+  }
+  $a1.='</select> <label data-error="wrong" data-success="right" for="defaultForm-email">Parent-Name</label> </div>';
+
+  ?>
 <?php
 $back=$obj2->prod_list($obj->conn);
-echo '<center><h3>View Product List</h3></center>';
+echo '<h3 class="ml-4">View Product List</h3>';
+echo '<hr class="my-4" />';
 $a='<div class="table-responsive"><table id="myTable"><thead><tr><th>Product-Parent-id</th><th>Product-Name</th><th>Product-Link</th><th>Product-Launch-Date</th><th>Monthly-Price</th><th>Yearly-Price</th><th>Sku</th><th>Web-Space</th><th>Band-Width</th><th>Free-Domain</th><th>Mail-box</th><th>L/T-Support</th><th>Action</th></tr></thead><tbody><tr>';
 foreach($back as $val){
   $val3='';

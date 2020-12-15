@@ -34,7 +34,7 @@ session_start();
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
         <a class="navbar-brand" href="javascript:void(0)">
-        <span style="color: #585CA7;">Ced</span> <span style="color: #e7663f;">Hosting</span>
+        <span style="color: #585CA7; font-family: Serif; background-color: #e7663f; border-radius:40px; font-size:40px;">Ced</span><span style="color: #e7663f; font-family: Serif; background-color: #585CA7; border-radius:40px; font-size:40px;">Hosting</span>
           <!-- <img src="assets/img/brand/blue.png" class="navbar-brand-img" alt="..."> -->
         </a>
       </div>
@@ -43,154 +43,153 @@ session_start();
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
-<li class="nav-item">
-<a class="nav-link active" href="admin.php">
-<i class="ni ni-tv-2 text-primary"></i>
-<span class="nav-link-text">Dashboard</span>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-planet text-orange"></i>
-<span class="nav-link-text">Products</span>
-</a>
-</li>
-<ul class="nav-item">
-<a class="nav-link" href="category.php">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Create category</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="product.php">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Add Product</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="productview.php">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">View Product</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Create New offers</span>
-</a>
-</ul>
-<li class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-bullet-list-67 text-default"></i>
-<span class="nav-link-text">Orders</span>
-</a>
-</li>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Pending Orders</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Completed Orders</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Cancelled Orders</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Generate Invoice</span>
-</a>
-</ul>
-<li class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-key-25 text-info"></i>
-<span class="nav-link-text">Services</span>
-</a>
-</li>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Active Services</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Expired Services</span>
-</a>
-</ul>
-
-
-
-<li class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-circle-08 text-pink"></i>
-<span class="nav-link-text">Users</span>
-</a>
-</li>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">All Users List</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Create New User</span>
-</a>
-</ul>
-<li class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-send text-dark"></i>
-<span class="nav-link-text">Blog</span>
-</a>
-</li>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Add New Blog</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">View all Blogs</span>
-</a>
-</ul>
-<li class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-send text-dark"></i>
-<span class="nav-link-text">Accounts</span>
-</a>
-</li>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Update Company Info</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Change Security Question</span>
-</a>
-</ul>
-<ul class="nav-item">
-<a class="nav-link" href="">
-<i class="ni ni-single-02 text-yellow"></i>
-<span class="nav-link-text">Change Password</span>
-</a>
-</ul>
-</ul>
+            <li class="nav-item">
+              <a class="nav-link active" href="admin.php">
+                <i class="ni ni-tv-2 text-primary"></i>
+                <span class="nav-link-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="ni ni-app text-primary"></i>
+                <span class="nav-link-text">Products</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="category.php">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Create Category</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="product.php">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Add Product</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="productview.php">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">View Products</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Create New Offers</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="ni ni-bag-17 text-primary"></i>
+                <span class="nav-link-text">Orders</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Pending Orders</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Completed Orders</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Cancelled Orders</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Generate Invoice</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="ni ni-bus-front-12 text-primary"></i>
+                <span class="nav-link-text">Services</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Active Services</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Expired Services</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="ni ni-single-02 text-primary"></i>
+                <span class="nav-link-text">Users</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">All User List</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Create New User</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="ni ni-world text-primary"></i>
+                <span class="nav-link-text">Blog</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Add New Blog</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">View all Blogs</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="ni ni-settings text-primary"></i>
+                <span class="nav-link-text">Accounts</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Update Company Info</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Change Security Ques</span>
+              </a>
+            </li>
+            <li class="nav-item pl-4">
+              <a class="nav-link" href="#">
+                <i class="ni ni-send text-dark"></i>
+                <span class="nav-link-text">Change Password</span>
+              </a>
+            </li>
+          </ul>
+          <!-- Divider -->
+          <!-- Heading -->
         </div>
       </div>
     </div>

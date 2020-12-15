@@ -175,7 +175,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"createNew","qid":"1","text":"Create
         </label>
         <div id="cid_11" class="form-input-wide jf-required" data-layout="half">
           <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="number" id="input_11"  onkeydown="return alphaonly(event);" name="mprice" data-type="input-number" class=" form-number-input form-textbox validate[required]" style="width:310px" size="310" value="" placeholder="ex: 23" data-component="number" aria-labelledby="label_11 sublabel_input_11" required="" step="any" />
+            <input type="number" id="input_11" maxlength="15" name="mprice" data-type="input-number" class=" form-number-input form-textbox validate[required]" style="width:310px" size="310" value="" placeholder="ex: 23" data-component="number" aria-labelledby="label_11 sublabel_input_11" required="" step="any" />
             <label class="form-sub-label" for="input_11" id="sublabel_input_11" style="min-height:13px" aria-hidden="false"> This would be Monthly Plan </label>
           </span>
         </div>
@@ -189,7 +189,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"createNew","qid":"1","text":"Create
         </label>
         <div id="cid_12" class="form-input-wide jf-required" data-layout="half">
           <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="number" id="input_12"  onkeydown="return alphaonly(event);" name="aprice" data-type="input-number" class=" form-number-input form-textbox validate[required]" style="width:310px" size="310" value="" placeholder="ex: 23" data-component="number" aria-labelledby="label_12 sublabel_input_12" required="" step="any" />
+            <input type="number" id="input_12" maxlength="15" name="aprice" data-type="input-number" class=" form-number-input form-textbox validate[required]" style="width:310px" size="310" value="" placeholder="ex: 23" data-component="number" aria-labelledby="label_12 sublabel_input_12" required="" step="any" />
             <label class="form-sub-label" for="input_12" id="sublabel_input_12" style="min-height:13px" aria-hidden="false"> This would be Annual Price </label>
           </span>
         </div>
@@ -202,7 +202,7 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"createNew","qid":"1","text":"Create
           </span>
         </label>
         <div id="cid_13" class="form-input-wide jf-required" data-layout="half">
-          <input type="text" id="input_13" name="sku"  onkeydown="return alphaonly(event);" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_13" required="" />
+          <input type="text" id="input_13" name="sku" required pattern="^[a-zA-Z0-9]+$" onkeydown="return alphaonly(event);" data-type="input-textbox" class="form-textbox validate[required]" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_13" required="" />
         </div>
       </li>
       <li class="form-line" data-type="control_divider" id="id_14">
@@ -305,26 +305,25 @@ JotForm.paymentExtrasOnTheFly([null,{"name":"createNew","qid":"1","text":"Create
       </li>
     </ul>
   </div>
- <script>
- var count=0;
- 			function alphaonly(button) { 
-					var code = button.which;
-					if(count>0 && code==32 ){
-		         	count=0;
-					  return true; 
-			       
-		} 
-	       
-         if ((code > 64 && code < 91) || (code < 123 && code > 96)|| (code==08)||(code==09)) {
-					count++;
-			    return true; 
-		     	
-				 }
-				 else{
-					return false;  
-				 }
+<script>
+  var count=0;
+  function alphaonly(button) { 
+    var code = button.which;
+    if(count>0 && code==32 ){
+        count=0;
+      return true; 
       
     } 
+    
+    if ((code > 64 && code < 91) || (code < 123 && code > 96)|| (code==08)||(code==09)||(code==46)) {
+      count++;
+      return true;  
+    }
+    else{
+      return false;
+    }
+  
+  } 
  </script>
   <script>
   JotForm.showJotFormPowered = "new_footer";
@@ -345,9 +344,6 @@ for (var i = 0; i < all_spc.length; i++)
 
 <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.22245"></script>
 <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.22245"></script>
-
-
-
 
 
 
