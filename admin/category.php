@@ -37,7 +37,7 @@ if (isset($_POST['submitt']))
         Product-Name:<input type ="text" name="name" class="ll id ml-4" required>
     </div>
     <div class="form-control m-2">
-        Product-link:<input type ="text" name="link" class="ll id ml-5" required>
+        Product-link:<input type ="text" name="html" class="ll id ml-5" required>
     </div>
     <div class="form-control m-2">
     <input type ="Submit" name="submit" class="submit">
@@ -56,7 +56,7 @@ if (isset($_POST['submitt']))
     $a.='<td>'.$val['id'].'</td>';
     $a.='<td>'.$val['prod_parent_id'].'</td>';
     $a.='<td>'.$val['prod_name'].'</td>';
-    $a.='<td>'.$val['link'].'</td>';
+    $a.='<td>'.$val['html'].'</td>';
     $a.='<td>'.$val['prod_available'].'</td>';
     $a.='<td>'.$val['prod_launch_date'].'</td>';
     $a.='<td><a '.$fg.' href="cat_del.php?id='.$val['id'].'" class="btn btn-default btn-rounded mb-4 sa">Delete</a><a href="cat_del.php?eid='.$val['id'].'" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm'.$val['id'].'">Edit</a></td></tr>';
@@ -88,7 +88,7 @@ if (isset($_POST['submitt']))
         </div>
         <div class="md-form mb-5">
           <i class="fas fa-envelope prefix grey-text"></i>
-          <input type ="text" value="'.$val['link'].'" name="link" id="defaultForm-email" class="form-control validate id ml-4">
+          <input type ="text" value="'.$val['html'].'" name="html" id="defaultForm-email" class="form-control validate id ml-4">
        
           <label data-error="wrong" data-success="right" for="defaultForm-email">Parent-link</label>
         </div>

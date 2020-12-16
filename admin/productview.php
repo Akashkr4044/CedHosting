@@ -68,7 +68,7 @@ foreach($back as $val){
     $abc=json_decode($val['description'], true);
     $a.='<td>'.$val['prod_parent_id'].'</td>';
     $a.='<td>'.$val['prod_name'].'</td>';
-    $a.='<td>'.$val['link'].'</td>';
+    $a.='<td>'.$val['html'].'</td>';
     $a.='<td>'.$val['prod_launch_date'].'</td>';
     $a.='<td>'.$val['mon_price'].'</td>';
     $a.='<td>'.$val['annual_price'].'</td>';
@@ -162,7 +162,7 @@ foreach($back as $val){
     </div>
     <div class="md-form mb-4">
     <i class="fas fa-lock prefix grey-text"></i>
-    <input type ="text" value="'.$val['link'].'" name="url"  id="defaultForm-email" class="form-control validate id ml-4">
+    <input type ="text" value="'.$val['html'].'" name="url"  id="defaultForm-email" class="form-control validate id ml-4">
     <label data-error="wrong" data-success="right" for="defaultForm-pass">Link</label>
   </div>
   <div class="md-form mb-4">

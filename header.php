@@ -91,10 +91,17 @@ $(".swipebox").swipebox();
 
 
 <ul class="dropdown-menu">
-<li <?php if ($file[0]=='linuxhosting.php') : ?>class="active"<?php endif;?>><a href="linuxhosting.php">Linux hosting</a></li>
-<li <?php if ($file[0]=='wordpresshosting.php') : ?>class="active"<?php endif;?>><a href="wordpresshosting.php">WordPress Hosting</a></li>
-<li <?php if ($file[0]=='windowshosting.php') : ?>class="active"<?php endif;?>><a href="windowshosting.php">Windows Hosting</a></li>
-<li <?php if ($file[0]=='cmshosting.php') : ?>class="active"<?php endif;?>><a href="cmshosting.php">CMS Hosting</a></li>
+<?php
+	include_once "class/dbcon.php";
+	$obj=new DB();
+	include_once "class/product.php";
+	$obj2=new Product();
+	$result = $obj2->ShowCategory($obj->conn);
+	foreach ($result as $key => $value) {
+		echo "<li><a href='catpage.php?id=".$value['id']."'>".$value['prod_name']."</a></li>";
+	}
+	?>
+
 </ul>
 </li>
 
@@ -105,7 +112,7 @@ $(".swipebox").swipebox();
 <li class="<?php if ($file[0]=='blog.php') : ?>active<?php endif; ?>"><a href="blog.php">Blog</a></li>
 <li class="<?php if ($file[0]=='contact.php') : ?>active<?php endif; ?>"><a href="contact.php">Contact</a></li>
 
-<li class="<?php if ($file[0]=='cart.php') : ?>active<?php endif; ?>"><a href="cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+<li class="<?php if ($file[0]=='cart.php') : ?>active<?php endif; ?>"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
 <?php
 if(!isset($_SESSION['userdata']))
 {?>

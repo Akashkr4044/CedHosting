@@ -9,7 +9,7 @@ class Product{
     public $id,$name,$link,$avb,$conn;
     function cat($id,$name,$link,$conn){
      
-     $sql="INSERT INTO `tbl_product` (`prod_parent_id`, `prod_name`, `link`,`prod_available`, `prod_launch_date`)
+     $sql="INSERT INTO `tbl_product` (`prod_parent_id`, `prod_name`, `html`,`prod_available`, `prod_launch_date`)
       VALUES ('".$id."', '".$name."', '".$link."',1, CURRENT_DATE())";
      $result=$conn->query($sql);
      $last_id = $conn->insert_id;
@@ -28,21 +28,68 @@ class Product{
             return $arry;
         }
     }
- function cat_del($m,$conn){
-    $sql="DELETE FROM `tbl_product` WHERE `id`='".$m."'";
-     $result=$conn->query($sql);
-     echo "<script>alert('Category Deleted');</script>";
-     header("location:category.php");
-    }
 
-function cat_edit($id,$parentid,$name,$link,$avb,$conn){
-    echo "<script>alert('Category updated');</script>";
-    $sql="UPDATE `tbl_product`
-     SET `prod_name`='".$name."' ,`link`='".$link."', `prod_available`='".$avb."',`prod_parent_id`='".$parentid."'
-     WHERE `id`='".$id."'";
-   
- $result=$conn->query($sql);
-}   
+    function ShowCategory($conn){
+        $sql = "SELECT * FROM `tbl_product` where `html` != 'NULL' and `prod_parent_id`=1";
+        $result = $conn->query($sql);
+        $row=array();
+        if ($result->num_rows > 0) {
+        // output data of each row
+        while($a = $result->fetch_assoc()) {
+        $row[]=$a;
+        }
+        } else {
+        echo "0 results";
+        }
+        return $row;
+        $conn->close();
+        }
+
+    function ShowCards($id,$conn){
+        $sql="SELECT tbl_product_description.id,prod_id,`description`,mon_price,annual_price,sku,tbl_product.id,prod_parent_id,prod_name,html,prod_available,prod_launch_date FROM tbl_product_description INNER JOIN tbl_product ON tbl_product_description.prod_id =tbl_product.id where `prod_parent_id`=$id and `prod_available`=1";
+        $result = $conn->query($sql);
+        // return $result;
+        if($result->num_rows > 0){
+        $row=array();
+        while($a = $result->fetch_assoc()) {
+        $row[]=$a;
+        }
+        }
+        return $row;
+        $conn->close();
+        }
+
+    function ShowParent($id,$conn){
+        $sql = "SELECT * FROM `tbl_product` where `id`=$id";
+        $result = $conn->query($sql);
+        $row=array();
+        if ($result->num_rows > 0) {
+        // output data of each row
+        while($a = $result->fetch_assoc()) {
+        $row[]=$a;
+        }
+        } else {
+        echo "0 results";
+        }
+        return $row;
+        $conn->close();
+        }    
+
+    function cat_del($m,$conn){
+        $sql="DELETE FROM `tbl_product` WHERE `id`='".$m."'";
+        $result=$conn->query($sql);
+        echo "<script>alert('Category Deleted');</script>";
+        header("location:category.php");
+        }
+
+    function cat_edit($id,$parentid,$name,$link,$avb,$conn){
+        echo "<script>alert('Category updated');</script>";
+        $sql="UPDATE `tbl_product`
+        SET `prod_name`='".$name."' ,`html`='".$html."', `prod_available`='".$avb."',`prod_parent_id`='".$parentid."'
+        WHERE `id`='".$id."'";
+    
+    $result=$conn->query($sql);
+    }   
 
 
 
@@ -94,7 +141,7 @@ function prod_name($name,$conn){
 }
 }
 function cat2($id,$drop,$parent,$name,$url,$avb,$conn){
-$sql="UPDATE tbl_product SET `prod_name`='".$name."',`link`='".$url."',`prod_available`='".$avb."',`prod_parent_id`='".$drop."'
+$sql="UPDATE tbl_product SET `prod_name`='".$name."',`html`='".$url."',`prod_available`='".$avb."',`prod_parent_id`='".$drop."'
 WHERE `id`='".$id."'";
 $result=$conn->query($sql);
 echo "<script>alert('product updated');</script>";
